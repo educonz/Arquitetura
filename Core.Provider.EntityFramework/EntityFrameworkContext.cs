@@ -2,7 +2,6 @@
 using Core.Data.Operations;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
-using System;
 using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
@@ -53,18 +52,11 @@ namespace Core.Provider.EntityFramework
             return entity;
         }
 
-        public virtual async Task<IQueryable<TEntity>> QueryAsync<TEntity>() where TEntity : class
-        {
-            var list = await Set<TEntity>().ToListAsync();
-            return list.AsQueryable();
-        }
+        public virtual Task<IQueryable<TEntity>> QueryAsync<TEntity>() where TEntity : class =>
+            Task.FromResult<IQueryable<TEntity>>(Set<TEntity>());
         
-
-        public virtual async Task<IQueryable<TEntity>> ReadOnlyQueryAsync<TEntity>() where TEntity : class
-        {
-            var list = await Set<TEntity>().AsNoTracking().ToListAsync();
-            return list.AsQueryable();
-        }
+        public virtual Task<IQueryable<TEntity>> ReadOnlyQueryAsync<TEntity>() where TEntity : class =>
+            Task.FromResult(Set<TEntity>().AsNoTracking());
 
         public virtual async Task<TEntity> AddAsync<TEntity>(TEntity entity) where TEntity : class
         {

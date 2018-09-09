@@ -12,7 +12,7 @@ build:
   project: Arquitetura.sln
   parallel: true
   verbosity: minimal
- deploy:
+deploy:
 - provider: NuGet
   api_key:
     secure: N3syhqs5cHi80QeyACpiJyZzqPf9EyWjm8zb6RYwn+6V3NSPUwhMvZyz04KseqGg

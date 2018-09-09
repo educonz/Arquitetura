@@ -8,7 +8,7 @@ install:
 before_build:
 - cmd: nuget restore
 build:
- include_nuget_references: true
+  include_nuget_references: true
   project: Arquitetura.sln
   parallel: true
   verbosity: minimal

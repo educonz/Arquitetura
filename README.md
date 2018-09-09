@@ -1,8 +1,9 @@
 # Arquitetura 
-![](https://ci.appveyor.com/api/projects/status/github/educonz/Arquitetura?svg=true&branch=master&passingText=master%20-%20OK&failingText=master%20-%20NOK&pendingText=master%20-%20PBuilding)
-Base para projetos desenvolvidos em C#
+![](https://ci.appveyor.com/api/projects/status/github/educonz/Arquitetura?svg=true&branch=master&passingText=master%20-%20OK&failingText=master%20-%20NOK&pendingText=master%20-%20Building)
 
-### Prerequisites
+Arquitetura base para projetos desenvolvidos em C#
+
+### Pré-requisitos
 
 ```
 Net Core 2.1 instalado

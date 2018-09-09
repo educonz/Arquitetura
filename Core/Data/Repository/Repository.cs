@@ -3,11 +3,11 @@ using System.Threading.Tasks;
 
 namespace Core.Data.Repository
 {
-    public class RepositoryGeneric : IRepositoryGeneric
+    public class Repository : IRepository
     {
         private readonly IDataContext _dataContext;
 
-        public RepositoryGeneric(IDataContext dataContext)
+        public Repository(IDataContext dataContext)
         {
             _dataContext = dataContext;
         }

@@ -1,7 +1,8 @@
 ﻿namespace Core.Domain
 {
-    public interface IEntity
+    public interface IEntity<TKey> : IEntityDomain
+        where TKey : struct
     {
-        long Id { get; set; }
+        TKey Id { get; set; }
     }
 }

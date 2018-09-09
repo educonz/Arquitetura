@@ -1,20 +1,8 @@
-﻿using System.Linq;
-using System.Threading.Tasks;
+﻿using Core.Data.Operations;
 
 namespace Core.Data.Repository
 {
-    public interface IRepository<TEntity>
-        where TEntity : class, new()
+    public interface IRepository : IOperableData, IReadeableData
     {
-        TEntity Add(TEntity entity);
-        TEntity Update(TEntity entity);
-        void Remove(TEntity entity);
-        IQueryable<TEntity> Query();
-        IQueryable<TEntity> ReadOnlyQuery();
-        Task<TEntity> AddAsync(TEntity entity);
-        Task<TEntity> UpdateAsync(TEntity entity);
-        Task RemoveAsync(TEntity entity);
-        Task<IQueryable<TEntity>> QueryAsync();
-        Task<IQueryable<TEntity>> ReadOnlyQueryAsync();
     }
 }

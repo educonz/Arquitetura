@@ -31,6 +31,7 @@ namespace Core.Provider.EntityFramework
         TEntity IOperableData.Add<TEntity>(TEntity entity)
         {
             base.Add(entity);
+            SaveChanges();
             return entity;
         }
 
@@ -39,16 +40,21 @@ namespace Core.Provider.EntityFramework
             where TPropertyType : struct =>
             Set<TEntity>().Find(id);
 
-        public virtual IQueryable<TEntity> Query<TEntity>() where TEntity : class =>
+        IQueryable<TEntity> IReadeableData.Query<TEntity>() =>
             Set<TEntity>();
 
         public virtual IQueryable<TEntity> ReadOnlyQuery<TEntity>() where TEntity : class => Set<TEntity>().AsNoTracking();
 
-        void IOperableData.Remove<TEntity>(TEntity entity) => base.Remove(entity);
+        void IOperableData.Remove<TEntity>(TEntity entity)
+        {
+            base.Remove(entity);
+            SaveChanges();
+        }
 
         TEntity IOperableData.Update<TEntity>(TEntity entity)
         {
             base.Update(entity);
+            SaveChanges();
             return entity;
         }
 
@@ -61,18 +67,21 @@ namespace Core.Provider.EntityFramework
         public virtual async Task<TEntity> AddAsync<TEntity>(TEntity entity) where TEntity : class
         {
             await base.AddAsync(entity);
+            await SaveChangesAsync();
             return entity;
         }
 
         public virtual async Task<TEntity> UpdateAsync<TEntity>(TEntity entity) where TEntity : class
         { 
             await Task.Run(() => base.Update(entity));
+            await SaveChangesAsync();
             return entity;
         }
 
         public virtual async Task RemoveAsync<TEntity>(TEntity entity) where TEntity : class
         {
             await Task.Run(() => base.Remove(entity));
+            await SaveChangesAsync();
         }
     }
 }

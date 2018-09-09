@@ -1,7 +1,8 @@
 ﻿namespace Core.Domain
 {
-    public abstract class BaseEntity : IEntity
+    public abstract class BaseEntity<TKey> : IEntity<TKey>
+        where TKey : struct
     {
-        public virtual long Id { get; set; }
+        public virtual TKey Id { get; set; }
     }
 }

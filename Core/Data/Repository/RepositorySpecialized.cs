@@ -3,44 +3,44 @@ using System.Threading.Tasks;
 
 namespace Core.Data.Repository
 {
-    public abstract class RepositoryBase<TEntity> : IRepository<TEntity>
+    public abstract class RepositorySpecialized<TEntity> : IRepositorySpecialized<TEntity>
         where TEntity : class, new()
     {
-        protected readonly IDataContext DataContext;
+        protected readonly IRepository Repository;
 
-        public RepositoryBase(IDataContext dataContext)
+        public RepositorySpecialized(IRepository repositoryGeneric)
         {
-            DataContext = dataContext;
+            Repository = repositoryGeneric;
         }
 
         public virtual TEntity Add(TEntity entity) =>
-           DataContext.Add(entity);
+           Repository.Add(entity);
 
         public virtual async Task<TEntity> AddAsync(TEntity entity) =>
-            await DataContext.AddAsync(entity);
+            await Repository.AddAsync(entity);
 
         public virtual IQueryable<TEntity> Query() =>
-            DataContext.Query<TEntity>();
+            Repository.Query<TEntity>();
 
         public virtual async Task<IQueryable<TEntity>> QueryAsync() =>
-            await DataContext.QueryAsync<TEntity>();
+            await Repository.QueryAsync<TEntity>();
 
         public virtual IQueryable<TEntity> ReadOnlyQuery() =>
-            DataContext.ReadOnlyQuery<TEntity>();
+            Repository.ReadOnlyQuery<TEntity>();
 
         public virtual async Task<IQueryable<TEntity>> ReadOnlyQueryAsync() =>
-            await DataContext.ReadOnlyQueryAsync<TEntity>();
+            await Repository.ReadOnlyQueryAsync<TEntity>();
 
         public virtual void Remove(TEntity entity) =>
-            DataContext.Remove(entity);
+            Repository.Remove(entity);
 
         public virtual async Task RemoveAsync(TEntity entity) =>
-            await DataContext.RemoveAsync(entity);
+            await Repository.RemoveAsync(entity);
 
         public virtual TEntity Update(TEntity entity) =>
-            DataContext.Update(entity);
+            Repository.Update(entity);
 
         public virtual async Task<TEntity> UpdateAsync(TEntity entity) =>
-            await DataContext.UpdateAsync(entity);
+            await Repository.UpdateAsync(entity);
     }
 }

@@ -4,6 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>CZ.Core.Provider.AutoMapper</PackageId>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.0.4</Version>
   </PropertyGroup>
 
   <ItemGroup>

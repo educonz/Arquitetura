@@ -12,6 +12,9 @@ namespace Core.Injector
             where TService : class
             where TImplementation : class, TService;
 
+        void AddSingleton<TService>(TService implementation)
+            where TService : class;
+
         void AddTransient<TService, TImplementation>()
             where TService : class
             where TImplementation : class, TService;

@@ -11,6 +11,9 @@ namespace Core.Provider.AutoMapper
             _mapper = mapper;
 
         public TOutput Map<TInput, TOutput>(TInput input) =>
-            _mapper.Map<TOutput>(input);
+            _mapper.Map<TInput, TOutput>(input);
+
+        public TOutput Map<TOutput>(object source) =>
+            _mapper.Map<TOutput>(source);
     }
 }

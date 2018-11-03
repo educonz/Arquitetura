@@ -4,8 +4,8 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>CZ.Core</PackageId>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.10</Version>
-    <AssemblyVersion>1.0.10.0</AssemblyVersion>
+    <Version>1.0.11</Version>
+    <AssemblyVersion>1.0.11.0</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>

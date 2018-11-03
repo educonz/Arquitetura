@@ -7,7 +7,7 @@ namespace Core.Provider.AutoMapper
     {
         public void Load(IInjector injector)
         {
-            injector.AddTransient<IMap, MapProvider>();
+            injector.AddSingleton<IMap, MapProvider>();
         }
     }
 }

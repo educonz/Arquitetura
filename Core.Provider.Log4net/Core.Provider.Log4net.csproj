@@ -3,12 +3,14 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>CZ.Core.Provider.Log4net</PackageId>
-    <Version>1.0.2</Version>
+    <Version>1.0.4</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <AssemblyVersion>1.0.4.0</AssemblyVersion>
+    <FileVersion>1.0.4.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="CZ.Core" Version="1.0.9" />
+    <PackageReference Include="CZ.Core" Version="1.0.11" />
     <PackageReference Include="log4net" Version="2.0.8" />
   </ItemGroup>
 

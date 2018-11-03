@@ -9,9 +9,9 @@ namespace Core
     {
         public void Load(IInjector injector)
         {
-            injector.AddTransient<IDateTimeService, DateTimeService>();
-            injector.AddTransient<IRepository, Repository>();
-            injector.AddTransient<IUnityOfWork, UnityOfWork>();
+            injector.AddScoped<IDateTimeService, DateTimeService>();
+            injector.AddScoped<IRepository, Repository>();
+            injector.AddScoped<IUnityOfWork, UnityOfWork>();
         }
     }
 }

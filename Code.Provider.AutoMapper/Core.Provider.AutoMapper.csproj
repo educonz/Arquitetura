@@ -4,12 +4,12 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>CZ.Core.Provider.AutoMapper</PackageId>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.4</Version>
+    <Version>1.0.5</Version>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="7.0.1" />
-    <PackageReference Include="CZ.Core" Version="1.0.9" />
+    <PackageReference Include="CZ.Core" Version="1.0.11" />
   </ItemGroup>
 
 </Project>
